@@ -1,5 +1,5 @@
 import React, { component, Component } from "react";
-import Form from "./form";
+import Form from "./Form";
 import DisplayData from "./DisplayData";
 
 class ParentComponent extends Component {
@@ -8,25 +8,30 @@ class ParentComponent extends Component {
     lastName: ""
   };
 
-  handleFirstNameChange = event => {
-    this.setState({
-      firstName: event.target.value
-    });
-  };
+  handleChange = (event) => {
+      this.setState({
+          [event.target.name]: event.target.value
+      })
+  }
 
-  handleLastNameChange = event => {
-    this.setState({
-      lastName: event.target.value
-    });
-  };
+//   handleFirstNameChange = event => {
+//     this.setState({
+//       firstName: event.target.value
+//     });
+//   };
+
+//   handleLastNameChange = event => {
+//     this.setState({
+//       lastName: event.target.value
+//     });
+//   };
 
   render() {
     return (
       <div>
         <Form
           formData={this.state}
-          handleFirstNameChange={this.handleFirstNameChange}
-          handleLastNameChange={this.handleLastNameChange}
+          handleChange={this.handleChange}
         />
         <DisplayData formData={this.state}/>
       </div>
