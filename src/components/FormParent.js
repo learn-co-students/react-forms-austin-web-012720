@@ -23,7 +23,7 @@ class ParentComponent extends Component {
             <div>
                 <Form
                     formData={this.state}
-                    handleChange={this.handleChange}
+                    handleChange={this.handleeChange}
                 />
                 <DisplayData formData={this.state} />
             </div>
